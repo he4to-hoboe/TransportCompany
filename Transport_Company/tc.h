@@ -5,30 +5,11 @@
 #include <list>
 #include "Drivers.h"
 #include "DriversList.h"
+#include "DriversInputScreen.h"
 using namespace std;
 // глобальные методы //
 void getaLine(string& inStr); // получение строки текста
 char getaChar(); // получение символа
-
-
-
-
-//класс DriversInputScreen//
-//класс DriversInputScreen. Это класс, отвечающий за отображение «экрана»,
-//куда пользователь может ввести данные о новом водителе:
-class DriversInputScreen
-{
-private:
-    DriversList* ptrDriversList;
-    string tName;
-    int FlightNo;
-public:
-    DriversInputScreen(DriversList* ptrDL) : ptrDriversList(ptrDL)
-    {
-        /* тут пусто */
-    }
-    void setDriver(); // добавить данные о водителе
-};
 
 
 

@@ -1,9 +1,9 @@
 //DriversList.h
 #ifndef DRIVERSLIST
 #define DRIVERSLIST
-#include "drivers.h"
+#include "Drivers.h"
 using namespace std;
-//класс DriversList//
+
 //класс DriversList — список всех водителей.
 //Он содержит множество указателей на класс Drivers
 // и оперирует ими при выводе

@@ -7,7 +7,8 @@ SOURCES += \
     TransportCompany.cpp \
     tc.cpp \
     Drivers.cpp \
-    DriversList.cpp
+    DriversList.cpp \
+    DriversInputScreen.cpp
 
 include(deployment.pri)
 qtcAddDeployment()
@@ -15,5 +16,6 @@ qtcAddDeployment()
 HEADERS += \
     tc.h \
     Drivers.h \
-    DriversList.h
+    DriversList.h \
+    DriversInputScreen.h
 
