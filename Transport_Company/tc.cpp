@@ -16,113 +16,18 @@ char getaChar() // получение символа
     return ch;
 }
 
-
-
-//методы класса Drivers//
-//в конструкторе задаём имя водителя и номер рейса
-Drivers::Drivers(string n, int aNo) : name(n), flightNumber(aNo)
-{
-    /* тут пусто */
-}
-
-
-Drivers::~Drivers() // деструктор
-{
-    /* тут тоже пусто */
-}
-
-
-int Drivers::getFlightNumber() //геттер возвращает номер рейса водителя
-{
-    return flightNumber;
-}
-
-
-string Drivers::getName() //геттер возвращает имя водителя
-{
-    return name;
-}
-
-
-
-//метод класса DriversInputScreen//
-void DriversInputScreen::setDriver() // добавить данные о водителе
-{
-    cout << "Enter the driver's name (Alexander Masloy): " << endl; // Введите имя водителя (Александр Маслов):
-    getaLine(tName);
-    cout << "Enter the flight number (515): " << endl; // Введите номер рейса (515):
-    cin >> FlightNo;
-    cin.ignore(80, '\n');
-    Drivers* ptrDriver = new Drivers(tName, FlightNo); // создать водителя
-    ptrDriversList->insertDriver(ptrDriver); // занести в список водителей
-}
-
-
-
-//методы класса DriversList//
-DriversList::~DriversList() // деструктор
-{
-    while (!setPtrsDrive.empty()) // удаление всех водителей,
-    { // удаление указателей из контейнера
-        iter = setPtrsDrive.begin();
-        delete* iter;
-        setPtrsDrive.erase(iter);
-    }
-}
-
-
-void DriversList::insertDriver(Drivers* ptrD)
-{
-    setPtrsDrive.push_back(ptrD); // вставка нового водителя в список
-}
-
-
-int DriversList::getFlightNo(string tName) // получить номер рейса по имени водителя
-{
-    int FlightNo;
-    iter = setPtrsDrive.begin();
-    while (iter != setPtrsDrive.end())
-    { // поиск водителя в списке (достаем у каждого водителя номер рейса)
-        FlightNo = (*iter)->getFlightNumber();
-        if (tName == ((*iter)->getName())) // сравниваем по именам и
-        {
-            // если получившаяся пара совпадает - значит,
-            //мы нашли запись об этом водителе в списке, в этом случае
-            return FlightNo; // возвращаем номер его рейса
-        }
-        iter++;
-    }
-    return -1; // если нет - возвращаем -1
-}
-
-
-void DriversList::display() // вывод списка водителей
-{
-    cout << "\nNumber#\tName Driver\n-------------------\n";
-    if (setPtrsDrive.empty()) // если список водителей пуст
-        cout << "***No driver***\n" << endl; // выводим запись, что он пуст)
-    else
-    {
-        iter = setPtrsDrive.begin();
-        while (iter != setPtrsDrive.end()) // распечатываем всех водителей
-        {
-            cout << (*iter)->getFlightNumber() << "   || " << (*iter)->getName() << endl;
-            *iter++;
-        }
-    }
-}
-
-
 //методы класса UserInterface//
 UserInterface::UserInterface()
 {
     ptrDriversList = new DriversList;
+    ptrRevRecord = new RevRecord;
 }
 
 
 UserInterface::~UserInterface()
 {
     delete ptrDriversList;
+    delete ptrRevRecord;
 }
 
 
@@ -131,8 +36,10 @@ void UserInterface::interact()
     while (true)
     {
             cout << "\n Click to add a driver 'a', \n"      //Нажмите для добавления водителя
-                << " Click to withdraw drivers 'd', \n"		//Нажмите для вывода водителей
-                << " Click to exit the program 'q'\n";      //Нажмите для выхода из программы
+                 << " Click to record the driver's income 'b', \n"  //Нажмите для записи дохода водителя
+                 << " Click to withdraw drivers 'd', \n"		//Нажмите для вывода водителей
+                 << " Click to withdraw revenue 'e', \n"          //Нажмите для вывода доходов
+                 << " Click to exit the program 'q'\n";      //Нажмите для выхода из программы
             ch = getaChar();
             switch (ch)
             {
@@ -140,7 +47,13 @@ void UserInterface::interact()
                 ptrDriversInputScreen->setDriver();
                 delete ptrDriversInputScreen;
                 break;
+            case 'b': ptrRevInputScreen = new RevInputScreen(ptrDriversList, ptrRevRecord);
+                            ptrRevInputScreen->setRev();
+                            delete ptrRevInputScreen;
+                            break;
             case 'd': ptrDriversList->display();
+                break;
+            case 'e': ptrRevRecord->display();
                 break;
             case 'q':
                 cout << "The program is completed"; // Программа завершена
@@ -151,3 +64,4 @@ void UserInterface::interact()
             } // конец switch
     } // конец while
 } // конец interact()
+
