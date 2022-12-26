@@ -1,8 +1,7 @@
 //Expense.h
 #ifndef EXPENSE
 #define EXPENSE
-#include "tc.h"
-
+#include "UserInterface.h"
 //Класс затрат
 class Expense
 {

@@ -1,6 +1,6 @@
-//tc.h
-#ifndef TC_H
-#define TC_H
+//UserInterface.h
+#ifndef USERINTERFACE
+#define USERINTERFACE
 
 #include <iostream>
 #include <list>
@@ -16,25 +16,12 @@
 #include "Expense.h"
 #include "ExpenseRecord.h"
 #include "ExpenseInputScreen.h"
+#include "AnnualReport.h"
 
 using namespace std;
 // глобальные методы //
 void getaLine(string& inStr); // получение строки текста
 char getaChar(); // получение символа
-
-//класс AnnualReport//
-//Класс годового отчета
-class AnnualReport
-{
-private:
-    RevRecord* ptrRR; // записи доходов
-    ExpenseRecord* ptrER; // записи расходов
-    float expenses, revenues; // суммы доходов и расходов
-public:
-    AnnualReport(RevRecord*, ExpenseRecord*);
-    void display(); // отображение годового отчета
-};
-
 
 //Класс UserInterface//
 //Главный класс для запуска приложения:
@@ -55,5 +42,4 @@ public:
     ~UserInterface();
     void interact();
 };
-#endif // TC_H
-
+#endif // USERINTERFACE

@@ -1,7 +1,5 @@
 //RevInputScreen.cpp
-#include "tc.h"
-
-            //методы класса RevInputScreen//
+#include "UserInterface.h"
 
 void RevInputScreen::setRev()
 {

@@ -1,6 +1,7 @@
-//tc.cpp
+//UserInterface.cpp
 #include <iostream>
-#include "tc.h"
+#include "UserInterface.h"
+
 void getaLine(string& inStr) // получение строки текста
 {
     char temp[21];
@@ -16,31 +17,7 @@ char getaChar() // получение символа
     return ch;
 }
 
-
-//методы класса AnnualReport//
-//Конструктор
-AnnualReport::AnnualReport(RevRecord* pRR, ExpenseRecord* pER) : ptrRR(pRR), ptrER(pER)
-{ /* пусто */
-}
-//---------------------------------------------------------
-void AnnualReport::display()
-{
-    cout << "Annual Report\n--------------\n" << endl; //Годовой отчет
-    cout << "Income\n" << endl; // Доходы
-    cout << "\tPayment for the flight:\t"; // Плата за рейс
-    revenues = ptrRR->getSumOfRev();
-    cout << revenues << endl;
-    cout << "Expenses\n" << endl;  // Расходы
-    expenses = ptrER->displaySummary();
-    cout << "Total expenses:\t\t\t";  //Расходы всего
-    cout << expenses << endl;
-    // вычисляем прибыльность
-    cout << "\nBalance:\t\t\t" << (revenues - expenses) << endl; // Баланс
-}
-
-
-
-//методы класса UserInterface//
+//методы класса UserInterface
 UserInterface::UserInterface()
 {
     ptrDriversList = new DriversList;
@@ -48,14 +25,12 @@ UserInterface::UserInterface()
     ptrExpenseRecord = new ExpenseRecord;
 }
 
-
 UserInterface::~UserInterface()
 {
     delete ptrDriversList;
     delete ptrRevRecord;
     delete ptrExpenseRecord;
 }
-
 
 void UserInterface::interact()
 {
@@ -104,4 +79,3 @@ void UserInterface::interact()
         } // конец switch
     } // конец while
 } // конец interact()
-

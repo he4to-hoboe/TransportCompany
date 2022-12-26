@@ -3,7 +3,6 @@
 #define DRIVERSLIST
 #include "Drivers.h"
 using namespace std;
-
 //класс DriversList — список всех водителей.
 //Он содержит множество указателей на класс Drivers
 // и оперирует ими при выводе
@@ -20,4 +19,3 @@ public:
     void display(); // вывод списка водителей
 };
 #endif // DRIVERSLIST
-

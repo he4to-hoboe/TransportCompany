@@ -1,7 +1,6 @@
 //ExpenseInputScreen.cpp
-#include "tc.h"
+#include "UserInterface.h"
 
-//методы класса ExpenseInputScreen//
 // конструктор
 ExpenseInputScreen::ExpenseInputScreen(ExpenseRecord* per) : ptrExpenseRecord(per)
 {

@@ -1,8 +1,7 @@
 //ExpenseInputScreen.h
 #ifndef EXPENSEINPUTSCREEN
 #define EXPENSEINPUTSCREEN
-#include "tc.h"
-
+#include "UserInterface.h"
 //Класс для ввода расходов
 class ExpenseInputScreen
 {

@@ -1,10 +1,7 @@
 //RevRecord.h
 #ifndef REVRECORD
 #define REVRECORD
-#include "tc.h"
-
-//////////////////// класс RevRecord ///////////////////////
-
+#include "UserInterface.h"
 class RevRecord
 {
 private:
@@ -16,6 +13,4 @@ public:
     void display(); // отобразить все строки с платами
     float getSumOfRev(); // подсчитать сумму всех платежей всех водителей
 };
-
 #endif // REVRECORD
-

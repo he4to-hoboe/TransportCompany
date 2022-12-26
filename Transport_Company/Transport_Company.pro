@@ -5,7 +5,6 @@ CONFIG -= qt
 
 SOURCES += \
     TransportCompany.cpp \
-    tc.cpp \
     Drivers.cpp \
     DriversList.cpp \
     DriversInputScreen.cpp \
@@ -13,13 +12,14 @@ SOURCES += \
     RevRecord.cpp \
     RevInputScreen.cpp \
     ExpenseInputScreen.cpp \
-    ExpenseRecord.cpp
+    ExpenseRecord.cpp \
+    AnnualReport.cpp \
+    UserInterface.cpp
 
 include(deployment.pri)
 qtcAddDeployment()
 
 HEADERS += \
-    tc.h \
     Drivers.h \
     DriversList.h \
     DriversInputScreen.h \
@@ -28,5 +28,7 @@ HEADERS += \
     RevInputScreen.h \
     Expense.h \
     ExpenseInputScreen.h \
-    ExpenseRecord.h
+    ExpenseRecord.h \
+    AnnualReport.h \
+    UserInterface.h
 

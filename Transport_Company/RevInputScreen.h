@@ -1,9 +1,7 @@
 //RevInputScreen.h
 #ifndef REVINPUTSCREEN
 #define REVINPUTSCREEN
-#include "tc.h"
-////////////////////класс RevInputScreen //////////////////
-
+#include "UserInterface.h"
 //Экран для добавления платы
 class RevInputScreen
 {
@@ -22,6 +20,4 @@ public:
     }
     void setRev(); // добавить доход с одного водителя за месяц
 };
-
 #endif // REVINPUTSCREEN
-

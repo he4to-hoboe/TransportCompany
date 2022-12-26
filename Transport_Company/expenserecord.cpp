@@ -1,7 +1,6 @@
 //ExpenseRecord.cpp
-#include "tc.h"
+#include "UserInterface.h"
 
-//методы класса ExpenseRecord//
 ExpenseRecord::~ExpenseRecord() // деструктор
 { // удалить объекты expense
 // удалить указатели на вектор
