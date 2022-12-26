@@ -1,10 +1,11 @@
-//tc.h
-#ifndef TC_H
-#define TC_H
+//UserInterface.h
+#ifndef USERINTERFACE
+#define USERINTERFACE
 
 #include <iostream>
 #include <list>
 #include <vector>
+#include <string>
 #include <numeric> //для accumulate()
 #include "Drivers.h"
 #include "DriversList.h"
@@ -12,12 +13,15 @@
 #include "FlightRevenue.h"
 #include "RevRecord.h"
 #include "RevInputScreen.h"
+#include "Expense.h"
+#include "ExpenseRecord.h"
+#include "ExpenseInputScreen.h"
+#include "AnnualReport.h"
+
 using namespace std;
 // глобальные методы //
 void getaLine(string& inStr); // получение строки текста
 char getaChar(); // получение символа
-
-
 
 //Класс UserInterface//
 //Главный класс для запуска приложения:
@@ -29,12 +33,13 @@ private:
     DriversInputScreen* ptrDriversInputScreen;
     RevRecord* ptrRevRecord;
     RevInputScreen* ptrRevInputScreen;
-
+    ExpenseRecord* ptrExpenseRecord;
+    ExpenseInputScreen* ptrExpenseInputScreen;
+    AnnualReport* ptrAnnualReport;
     char ch;
 public:
     UserInterface();
     ~UserInterface();
     void interact();
 };
-#endif // TC_H
-
+#endif // USERINTERFACE

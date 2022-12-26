@@ -1,8 +1,7 @@
 //DriversInputScreen.h
 #ifndef DRIVERSINPUTSCREEN
 #define DRIVERSINPUTSCREEN
-#include "tc.h"
-//класс DriversInputScreen//
+#include "UserInterface.h"
 //класс DriversInputScreen. Это класс, отвечающий за отображение «экрана»,
 //куда пользователь может ввести данные о новом водителе:
 class DriversInputScreen
@@ -18,6 +17,4 @@ public:
     }
     void setDriver(); // добавить данные о водителе
 };
-
 #endif // DRIVERSINPUTSCREEN
-

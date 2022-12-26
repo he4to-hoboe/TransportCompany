@@ -1,7 +1,6 @@
 //RevRecord.cpp
-#include "tc.h"
+#include "UserInterface.h"
 
-//методы класса RevRecord//
 RevRecord::~RevRecord() // деструктор
 { // удалить строки с платежами,
 // удалить указатели из множества.

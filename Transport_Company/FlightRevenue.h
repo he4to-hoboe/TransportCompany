@@ -1,10 +1,7 @@
 //FlightRevenue.h
 #ifndef FLIGHTREVENUE
 #define FLIGHTREVENUE
-
-#include "tc.h"
-
-////////////////////класс FlightRevenue//////////////////////////
+#include "UserInterface.h"
 //класс, хранящий одну табличную строку доходов с рейса
 // одна строка таблицы прибыли: рейс и 12 доходов по месяцам
 class FlightRevenue
@@ -21,4 +18,3 @@ public:
     float getRevNo(int); //Запрос дохода за месяц int
 };
 #endif // FLIGHTREVENUE
-

@@ -1,6 +1,6 @@
 //DriversInputScreen.cpp
-#include "tc.h"
-//метод класса DriversInputScreen//
+#include "UserInterface.h"
+
 void DriversInputScreen::setDriver() // добавить данные о водителе
 {
     cout << "Enter the driver's name (Alexander Masloy): " << endl; // Введите имя водителя (Александр Маслов):
